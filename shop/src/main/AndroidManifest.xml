@@ -1,0 +1,12 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kcr.shop" >
+
+
+    <application
+        android:theme="@style/QMUI.Compat.NoActionBar">
+
+
+        <activity android:name=".ShopActivity">
+        </activity>
+    </application>
+</manifest>

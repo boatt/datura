@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:gravity="center">
+
+    <com.kcr.common.widget.AdImageViewVersion1
+        android:id="@+id/id_iv_ad"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:scaleType="matrix"
+        android:src="@mipmap/img_news_drj"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/id_tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:text="益童书屋"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/id_tv_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/id_tv_title"
+        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:maxLines="4"
+        android:text="\t\t\t\t读书改变命运
+在我们生活的世界，书籍随处可见、随手可读，但是，在贫困地区还有这样的一些孩子，他们热爱学习，渴望知识，可他们只有人手一本的课本，屈指可数的课外读物。内蒙古一个偏远贫困地区的小学校长，坚守岗位31年，把一批又一批的孩子培养成才，为孩子们的教育付出了一生的心血，当益童成长中心工作人员带着图书走进学校时，这个兢兢业业的校长召集全村人来到学校开会，感谢中心为孩子们送来优质图书，同时告诉孩子的家人，要陪着孩子一起读书，读书使人进步，读书改变命运。" />
+
+    <TextView
+        android:id="@+id/id_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/id_tv_desc"
+        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:maxLines="4"
+        android:text="2018年6月11日23:34" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/md_divider_black"></View>
+</RelativeLayout>
