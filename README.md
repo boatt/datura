@@ -3,9 +3,12 @@
 项目采用组件化+MVP+RX等主流技术
 
 #### APK下载地址
-https://fir.im/l23e?release_id=5b200bef959d697715c8262d
-#### 开源地址
-https://github.com/boatt/androidMoule
+
+https://fir.im/l23e
+
+####  开源地址
+
+https://github.com/boatt/datura
 
 
 ## 项目截图
