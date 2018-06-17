@@ -2,10 +2,13 @@
 >Datura(曼陀罗)是什么?她是一个正能量的希望工程,她的出现旨在帮助到那些阳光照射不到的地方的人们,消除人与人之间不平等,带他们带来一份温暖、一份阳光、一份希望。
 项目采用组件化+MVP+RX等主流技术
 
-####APK下载地址
-https://fir.im/l23e?release_id=5b200bef959d697715c8262d
-####开源地址
-https://github.com/boatt/androidMoule
+#### APK下载地址
+
+https://fir.im/l23e
+
+####  开源地址
+
+https://github.com/boatt/datura
 
 
 ## 项目截图
@@ -55,6 +58,10 @@ isModule=false是切换开关,true打开模块化,false 是关闭模块化采用
 
 如果你觉得这个概念项目不错可以打赏我一杯咖啡钱
 
+![TIM截图20180613161250.png](https://upload-images.jianshu.io/upload_images/2567841-b323a7732498dbdd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+![TIM截图20180613161325.png](https://upload-images.jianshu.io/upload_images/2567841-caa0b93821e100cd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 ## License
