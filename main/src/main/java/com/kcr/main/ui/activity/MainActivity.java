@@ -43,17 +43,17 @@ public class MainActivity extends BasicActivity {
         mHomeWelfareFragment = HomeWelfareFragment.newInstance(1);
         mHomeMeFragment = HomeMeFragment.newInstance(1);
         getSupportFragmentManager().beginTransaction().add(R.id.home_pager, mHomeWelfareFragment).add(R.id.home_pager, mHomeMeFragment)
-        .hide(mHomeMeFragment).show(mHomeWelfareFragment).commit();
+                .hide(mHomeMeFragment).show(mHomeWelfareFragment).commit();
 
         mTabSegment.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if (item.getItemId() == R.id.navigation_home) {
-                    getSupportFragmentManager().beginTransaction() .hide(mHomeMeFragment) .show(mHomeWelfareFragment).commit();
+                    getSupportFragmentManager().beginTransaction().hide(mHomeMeFragment).show(mHomeWelfareFragment).commit();
                     QMUIStatusBarHelper.setStatusBarLightMode(MainActivity.this);
                     return true;
                 } else if (item.getItemId() == R.id.navigation_me) {
-                    getSupportFragmentManager().beginTransaction() .hide(mHomeWelfareFragment) .show(mHomeMeFragment).commit();
+                    getSupportFragmentManager().beginTransaction().hide(mHomeWelfareFragment).show(mHomeMeFragment).commit();
                     QMUIStatusBarHelper.setStatusBarDarkMode(MainActivity.this);
                     return true;
                 }

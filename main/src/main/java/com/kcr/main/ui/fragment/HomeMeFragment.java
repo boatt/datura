@@ -121,16 +121,18 @@ public class HomeMeFragment extends BasicFragment {
                         jumpActivity("/news/newsActivity");
                         break;
                     case 4:
-                        jumpActivity("/shop/shopActivity");
-
+                        jumpActivity("/video/videoActivity");
                         break;
                     case 5:
-//                        jumpActivity("/news/shopActivity");
+                        jumpActivity("/shop/shopActivity");
                         break;
                     case 6:
-                        jumpActivity(GroundActivity.class);
+//                        jumpActivity(GroundActivity.class);
                         break;
                     case 7:
+                        jumpActivity(GroundActivity.class);
+                        break;
+                    case 8:
                         jumpActivity(SettingActivity.class);
                         break;
                 }
@@ -176,6 +178,7 @@ public class HomeMeFragment extends BasicFragment {
         data.add(new HomeMeBean(R.mipmap.icon_main_medal, "徽章"));
         data.add(new HomeMeBean(R.mipmap.icon_main_coin, "花币"));
         data.add(new HomeMeBean(R.mipmap.icon_main_news, "新闻"));
+        data.add(new HomeMeBean(R.mipmap.icon_main_video, "视频"));
         data.add(new HomeMeBean(R.mipmap.icon_main_store, "商城"));
         data.add(new HomeMeBean(R.mipmap.icon_main_goods, "捐物品"));
         data.add(new HomeMeBean(R.mipmap.icon_main_activity, "线下活动"));
