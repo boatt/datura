@@ -4,6 +4,11 @@ import com.shuyu.gsyvideoplayer.listener.VideoAllCallBack;
 
 public class KCRVideoAllCallBack implements VideoAllCallBack {
     @Override
+    public void onStartPrepared(String url, Object... objects) {
+
+    }
+
+    @Override
     public void onPrepared(String url, Object... objects) {
 
     }

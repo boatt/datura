@@ -78,7 +78,7 @@ public class HomeWelfareFragment extends BasicFragment<PHomeWelfareImpl> impleme
             @Override
             protected void convert(final BaseViewHolder helper, final HomeWelfareBean item) {
                 ImageView imgBg = helper.getView(R.id.img_bg);
-                Glide.with(imgBg.getContext()).load(item.getImage()).diskCacheStrategy(DiskCacheStrategy.SOURCE).into(imgBg);
+                Glide.with(imgBg.getContext()).load(item.getImage()) .animate( android.R.anim.slide_in_left ) .diskCacheStrategy(DiskCacheStrategy.SOURCE).into(imgBg);
                 helper.setText(R.id.tv_title, item.getTitle());
                 helper.setText(R.id.tv_bottom, item.getDesc());
                 imgBg.setOnClickListener(new View.OnClickListener() {

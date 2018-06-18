@@ -77,6 +77,11 @@ public class VideoActivity extends BasicActivity {
                         onBackPressed();
                     }
                 });
+                videoPlayer.setAutoFullWithSize(true);
+                //全屏动画
+                videoPlayer.setShowFullAnimation(true);
+                //小屏时不触摸滑动
+                videoPlayer.setIsTouchWiget(false);
                 videoPlayer.setVideoAllCallBack(new KCRVideoAllCallBack());
             }
         });
