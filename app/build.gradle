@@ -34,5 +34,6 @@ dependencies {
         implementation project(':news')
         implementation project(':shop')
         implementation project(':video')
+        implementation project(':chatroom')
     }
 }

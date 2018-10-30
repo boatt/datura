@@ -97,13 +97,13 @@ public class HomeMeFragment extends BasicFragment {
             }
         };
         rvList.setAdapter(mAdapter);
-        mAdapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() {
-            @Override
-            public void onLoadMoreRequested() {
-                flag = false;
-                getData();
-            }
-        }, rvList);
+//        mAdapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() {
+//            @Override
+//            public void onLoadMoreRequested() {
+//                flag = false;
+//                getData();
+//            }
+//        }, rvList);
         mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
@@ -133,6 +133,9 @@ public class HomeMeFragment extends BasicFragment {
                         jumpActivity(GroundActivity.class);
                         break;
                     case 8:
+                        jumpActivity("/chat/chatActivity");
+                        break;
+                    case 9:
                         jumpActivity(SettingActivity.class);
                         break;
                 }
@@ -182,6 +185,7 @@ public class HomeMeFragment extends BasicFragment {
         data.add(new HomeMeBean(R.mipmap.icon_main_store, "商城"));
         data.add(new HomeMeBean(R.mipmap.icon_main_goods, "捐物品"));
         data.add(new HomeMeBean(R.mipmap.icon_main_activity, "线下活动"));
+        data.add(new HomeMeBean(R.mipmap.icon_main_activity, "聊天室"));
         data.add(new HomeMeBean(R.mipmap.icon_main_setting, "设置"));
         setData(flag, data);
     }

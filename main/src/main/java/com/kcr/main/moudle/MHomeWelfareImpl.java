@@ -23,10 +23,10 @@ public class MHomeWelfareImpl extends BaseModel {
         data.add(new HomeWelfareBean(R.mipmap.img_main_book, "益童书屋", "项目旨在为贫困山区、留守儿童等一些渴望读书的孩子筹集课外读物，协助孩子所在的学校筹建起自己的阅览室，并且协助学校的老师进行阅读推广。"));
         data.add(new HomeWelfareBean(R.mipmap.skid_right_5, "贫困白内障的光明", "您的善款将用于为贫困地区的白内障患者提供治疗的手术费，通过手术可以帮助他们重见光明。"));
         data.add(new HomeWelfareBean(R.mipmap.icon_main_emptynest, "空巢不空银天使计划", "空巢老人，一个不起眼的群体，但或许其中就有你我最亲近的人。病痛的折磨只是他们生活里的插曲，无人问津的寂寞和“被遗弃”的孤独感才是最大的伤害。"));
-        data.add(new HomeWelfareBean(R.mipmap.img_main_orphan, "贫困孤儿助养", "旨在帮助中国贫困地区6周岁以上的孤儿，为他们提供基本生活和学习补助，使他们能和其他孩子一样享有受教育的权利，得到关怀和照顾，快乐健康成长。"));
-        data.add(new HomeWelfareBean(R.mipmap.img_main_book, "益童书屋", "项目旨在为贫困山区、留守儿童等一些渴望读书的孩子筹集课外读物，协助孩子所在的学校筹建起自己的阅览室，并且协助学校的老师进行阅读推广。"));
-        data.add(new HomeWelfareBean(R.mipmap.skid_right_5, "贫困白内障的光明", "您的善款将用于为贫困地区的白内障患者提供治疗的手术费，通过手术可以帮助他们重见光明。"));
-        data.add(new HomeWelfareBean(R.mipmap.icon_main_emptynest, "空巢不空银天使计划", "空巢老人，一个不起眼的群体，但或许其中就有你我最亲近的人。病痛的折磨只是他们生活里的插曲，无人问津的寂寞和“被遗弃”的孤独感才是最大的伤害。"));
+//        data.add(new HomeWelfareBean(R.mipmap.img_main_orphan, "贫困孤儿助养", "旨在帮助中国贫困地区6周岁以上的孤儿，为他们提供基本生活和学习补助，使他们能和其他孩子一样享有受教育的权利，得到关怀和照顾，快乐健康成长。"));
+//        data.add(new HomeWelfareBean(R.mipmap.img_main_book, "益童书屋", "项目旨在为贫困山区、留守儿童等一些渴望读书的孩子筹集课外读物，协助孩子所在的学校筹建起自己的阅览室，并且协助学校的老师进行阅读推广。"));
+//        data.add(new HomeWelfareBean(R.mipmap.skid_right_5, "贫困白内障的光明", "您的善款将用于为贫困地区的白内障患者提供治疗的手术费，通过手术可以帮助他们重见光明。"));
+//        data.add(new HomeWelfareBean(R.mipmap.icon_main_emptynest, "空巢不空银天使计划", "空巢老人，一个不起眼的群体，但或许其中就有你我最亲近的人。病痛的折磨只是他们生活里的插曲，无人问津的寂寞和“被遗弃”的孤独感才是最大的伤害。"));
         rxObservable.onNext(data);
 //        Observable.timer(1, TimeUnit.SECONDS).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<Long>() {
 //            @Override

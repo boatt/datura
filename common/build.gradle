@@ -48,7 +48,7 @@ dependencies {
     api 'com.jaredrummler:android-animations:1.0.0'
     annotationProcessor 'com.zhy:mpermission-compiler:1.0.0'
     api 'com.android.support:multidex:1.0.1'
-    api 'com.koushikdutta.async:androidasync:2.+'
+//    api 'com.koushikdutta.async:androidasync:2.+'
 
     api 'com.google.code.gson:gson:2.8.5'
 //    api 'com.tamic.novate:novate:1.5.5'
