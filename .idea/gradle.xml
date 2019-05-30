@@ -15,12 +15,14 @@
             <option value="$PROJECT_DIR$/jbox2d" />
             <option value="$PROJECT_DIR$/login" />
             <option value="$PROJECT_DIR$/main" />
+            <option value="$PROJECT_DIR$/network" />
             <option value="$PROJECT_DIR$/news" />
             <option value="$PROJECT_DIR$/shop" />
             <option value="$PROJECT_DIR$/video" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
+        <option name="testRunner" value="PLATFORM" />
       </GradleProjectSettings>
     </option>
   </component>

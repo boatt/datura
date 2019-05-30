@@ -1,1 +1,1 @@
-include ':app', ':login', ':news', ':main', ':common', ':jbox2d', ':MPChartLib', ':shop', ':video', ':chatroom'
+include ':app', ':login', ':news', ':main', ':common', ':jbox2d', ':MPChartLib', ':shop', ':video', ':chatroom', ':network'

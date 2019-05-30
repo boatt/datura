@@ -47,12 +47,11 @@
             android:layout_below="@id/waves"
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
             android:layout_marginTop="45dp"
+            android:layout_marginRight="30dp"
             android:background="@android:color/transparent"
             android:drawableLeft="@mipmap/ic_login_account"
             android:drawablePadding="15dp"
-            android:drawableStart="@mipmap/ic_login_account"
             android:hint="@string/login_username"
             android:inputType="textPersonName"
             android:padding="3dp"
@@ -64,8 +63,8 @@
             style="@style/AppTheme.Divison"
             android:layout_below="@+id/username"
             android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="2dp" />
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="30dp" />
 
         <EditText
             android:id="@+id/password"
@@ -74,13 +73,12 @@
             android:layout_below="@id/username"
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
             android:layout_marginTop="15dp"
+            android:layout_marginRight="30dp"
             android:background="@color/transparent"
-            android:drawableLeft="@mipmap/ic_login_password"
+            android:drawableLeft="@mipmap/icon_phone_code"
             android:drawablePadding="15dp"
-            android:drawableStart="@mipmap/ic_login_password"
-            android:hint="@string/login_password"
+            android:hint="@string/login_v_hint"
             android:inputType="textPassword"
             android:padding="3dp"
             android:textColor="@color/colorTextContent"
@@ -90,19 +88,19 @@
             style="@style/AppTheme.Divison"
             android:layout_below="@+id/password"
             android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="2dp" />
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="30dp" />
 
         <ImageView
             android:id="@+id/delete"
             android:layout_width="35dp"
             android:layout_height="35dp"
+            android:layout_below="@id/username"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_below="@id/username"
             android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
             android:layout_marginTop="15dp"
+            android:layout_marginRight="20dp"
             android:contentDescription="@string/app_name"
             android:padding="10dp"
             android:src="@mipmap/ic_login_delete"
@@ -113,14 +111,28 @@
             android:id="@+id/forget"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
+            android:layout_below="@id/password"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_below="@id/password"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:padding="10dp"
             android:text="@string/login_forget"
-            android:textColor="@color/colorTextAssistant" />
+            android:textColor="@color/colorTextAssistant"
+            android:visibility="gone" />
+
+        <com.kcr.login.widget.CountdownView
+            android:id="@+id/getCode"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@id/password"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:padding="10dp"
+            android:text="@string/login_sms"
+            android:textColor="@color/colorAccent" />
 
         <Button
             android:id="@+id/login"
@@ -128,8 +140,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/password"
             android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
             android:layout_marginTop="50dp"
+            android:layout_marginRight="30dp"
             android:background="@drawable/primary_button"
             android:gravity="center"
             android:padding="10dp"
@@ -157,8 +169,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:drawablePadding="10dp"
                 android:drawableTop="@mipmap/ic_login_tourist"
+                android:drawablePadding="10dp"
                 android:gravity="center_horizontal"
                 android:text="@string/login_tourist_mode"
                 android:textColor="@color/colorTextAssistant" />
@@ -174,8 +186,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:drawablePadding="10dp"
                 android:drawableTop="@mipmap/ic_login_phone"
+                android:drawablePadding="10dp"
                 android:gravity="center_horizontal"
                 android:text="@string/login_verify_mode"
                 android:textColor="@color/colorTextAssistant" />

@@ -3,17 +3,13 @@ package com.kcr.main.ui.activity.setting;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.kcr.common.base.BasicActivity;
+import com.kcr.common.util.AppCache;
 import com.kcr.main.R;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
-
 /**
+ *
  */
 
 public class SettingActivity extends BasicActivity {
@@ -25,7 +21,7 @@ public class SettingActivity extends BasicActivity {
         findViewById(R.id.iv_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               finish();
+                finish();
             }
         });
         findViewById(R.id.tv_feedback).setOnClickListener(new View.OnClickListener() {
@@ -50,6 +46,7 @@ public class SettingActivity extends BasicActivity {
             @Override
             public void onClick(View v) {
                 showToast("退出");
+                AppCache.loginOut();
             }
         });
     }

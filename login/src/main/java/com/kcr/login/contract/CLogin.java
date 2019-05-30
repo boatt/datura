@@ -3,7 +3,7 @@ package com.kcr.login.contract;
 
 import com.kcr.common.base.IBasePresenter;
 import com.kcr.common.base.IBaseView;
-import com.kcr.common.bean.LoginBean;
+import com.dtr.network.bean.LoginUserBean;
 
 /**
  * Created by Liang_Lu on 2017/12/22.
@@ -13,12 +13,12 @@ import com.kcr.common.bean.LoginBean;
 public interface CLogin {
 
     interface IPLogin extends IBasePresenter {
-        void pLogin();
+        void pLogin(String userNameStr, String passwordStr);
     }
 
     interface IVLogin extends IBaseView {
 
-        void vLoginSuccess(LoginBean bean);
+        void vLoginSuccess(LoginUserBean bean);
 
         void vLoginError(String reason);
 

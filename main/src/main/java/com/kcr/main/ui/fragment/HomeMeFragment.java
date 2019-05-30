@@ -1,6 +1,5 @@
 package com.kcr.main.ui.fragment;
 
-import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -9,22 +8,20 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.alibaba.android.arouter.launcher.ARouter;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.kcr.common.base.BasicFragment;
-import com.kcr.common.util.layoutmanager.layoutmanagergroup.skidright.SkidRightLayoutManager;
+import com.kcr.common.util.AppCache;
+import com.kcr.common.widget.CircleImageView;
 import com.kcr.main.R;
 import com.kcr.main.bean.HomeMeBean;
-import com.kcr.main.ui.activity.CapitalDetailedActivity;
 import com.kcr.main.ui.activity.CapitalDetailedFormActivity;
 import com.kcr.main.ui.activity.CoinDetailedActivity;
 import com.kcr.main.ui.activity.GroundActivity;
 import com.kcr.main.ui.activity.MedalActivity;
 import com.kcr.main.ui.activity.setting.SettingActivity;
-import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,12 +30,14 @@ public class HomeMeFragment extends BasicFragment {
 
     RecyclerView rvList;
     ImageView ivbg;
+    TextView tvNickname;
     private int mType;
     private boolean flag;
     private boolean isSearch;
     private int pageIndex = 1;
     private int PAGE_SIZE = 10;
-    private BaseQuickAdapter mAdapter;
+    private BaseQuickAdapter<HomeMeBean, BaseViewHolder> mAdapter;
+    private CircleImageView ivHeadImage;
 
     public static HomeMeFragment newInstance(int type) {
         HomeMeFragment fragment = new HomeMeFragment();
@@ -59,16 +58,22 @@ public class HomeMeFragment extends BasicFragment {
 
         mType = getArguments().getInt("type");
         ivbg = mRootView.findViewById(R.id.iv_bg);
-        rvList = mRootView.findViewById(R.id.rv_list);
-        mRootView.findViewById(R.id.rl_login).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ARouter.getInstance()
-                        .build("/login/loginActivity")
-                        .navigation();
+        ivHeadImage = mRootView.findViewById(R.id.iv_headImage);
+        tvNickname = mRootView.findViewById(R.id.tv_nickname);
+//        ImageLoader.loadImage(ivHeadImage, AppCache.getUser().getHeadPortraitUrl());
+        Glide.with(ivHeadImage.getContext()).load(AppCache.getUser().getHeadPortraitUrl()).diskCacheStrategy(DiskCacheStrategy.SOURCE).into(ivHeadImage);
 
-            }
-        });
+        tvNickname.setText(AppCache.getUser().getNickName());
+        rvList = mRootView.findViewById(R.id.rv_list);
+//        mRootView.findViewById(R.id.rl_login).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                ARouter.getInstance()
+//                        .build("/login/loginActivity")
+//                        .navigation();
+//
+//            }
+//        });
 
 //        Glide.with(ivbg.getContext()).load(R.mipmap.skid_right_5).asGif().diskCacheStrategy(DiskCacheStrategy.SOURCE).into(ivbg);
         initAdapter();
@@ -107,7 +112,8 @@ public class HomeMeFragment extends BasicFragment {
         mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                switch (position) {
+                int viewPosition = mAdapter.getData().get(position).getPosition() - 1;
+                switch (viewPosition) {
                     case 0:
                         jumpActivity(CapitalDetailedFormActivity.class);
                         break;
@@ -153,40 +159,17 @@ public class HomeMeFragment extends BasicFragment {
     }
 
     private void getData() {
-//        String route;
-//        if (mType == 0) {
-//            route = WebApi.Person.ORDERALLNO;
-//        } else {
-//            route = WebApi.Person.ORDERALLOK;
-//        }
-//        RequestPackage.PersonPackage.orderall(mContext, route, pageIndex, new JsonCallBackWrapper(this, true) {
-//            @Override
-//            public void onSuccess(String response) {
-//                srlRefresh.setRefreshing(false);
-//                if (StringUtils.isEmpty(response)) return;
-//                try {
-//                    JSONObject jsonObject = new JSONObject(response);
-//                    String json = jsonObject.getString("data");
-//                    Type type = new TypeToken<ArrayList<OrderBean>>() {
-//                    }.getType();
-//                    ArrayList<OrderBean> data = GsonUtils.fromJson(json, type);
-//                    setData(flag, data);
-//                } catch (JSONException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        });
         ArrayList<HomeMeBean> data = new ArrayList<>();
-        data.add(new HomeMeBean(R.mipmap.icon_main_detailed, "捐助明细"));
-        data.add(new HomeMeBean(R.mipmap.icon_main_medal, "徽章"));
-        data.add(new HomeMeBean(R.mipmap.icon_main_coin, "花币"));
-        data.add(new HomeMeBean(R.mipmap.icon_main_news, "新闻"));
-        data.add(new HomeMeBean(R.mipmap.icon_main_video, "视频"));
-        data.add(new HomeMeBean(R.mipmap.icon_main_store, "商城"));
-        data.add(new HomeMeBean(R.mipmap.icon_main_goods, "捐物品"));
-        data.add(new HomeMeBean(R.mipmap.icon_main_activity, "线下活动"));
-        data.add(new HomeMeBean(R.mipmap.icon_main_activity, "聊天室"));
-        data.add(new HomeMeBean(R.mipmap.icon_main_setting, "设置"));
+        data.add(new HomeMeBean(R.mipmap.icon_main_detailed, "捐助明细", 1));
+        data.add(new HomeMeBean(R.mipmap.icon_main_medal, "徽章", 2));
+        data.add(new HomeMeBean(R.mipmap.icon_main_coin, "花币", 3));
+        data.add(new HomeMeBean(R.mipmap.icon_main_news, "新闻", 4));
+        data.add(new HomeMeBean(R.mipmap.icon_main_video, "视频", 5));
+        data.add(new HomeMeBean(R.mipmap.icon_main_store, "商城", 6));
+        data.add(new HomeMeBean(R.mipmap.icon_main_goods, "捐物品", 7));
+        data.add(new HomeMeBean(R.mipmap.icon_main_activity, "线下活动", 8));
+        data.add(new HomeMeBean(R.mipmap.icon_main_activity, "聊天室", 9));
+        data.add(new HomeMeBean(R.mipmap.icon_main_setting, "设置", 10));
         setData(flag, data);
     }
 

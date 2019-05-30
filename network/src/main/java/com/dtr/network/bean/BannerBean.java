@@ -1,4 +1,4 @@
-package com.kcr.common.bean;
+package com.dtr.network.bean;
 
 
 /**

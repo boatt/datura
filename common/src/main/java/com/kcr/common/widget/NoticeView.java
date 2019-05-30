@@ -13,7 +13,7 @@ import android.widget.ViewFlipper;
 
 
 import com.kcr.common.R;
-import com.kcr.common.bean.BannerBean;
+import com.dtr.network.bean.BannerBean;
 
 import java.util.List;
 

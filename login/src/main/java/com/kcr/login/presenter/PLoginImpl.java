@@ -3,7 +3,7 @@ package com.kcr.login.presenter;
 import android.content.Context;
 
 import com.kcr.common.base.BasePresenter;
-import com.kcr.common.bean.LoginBean;
+import com.dtr.network.bean.LoginUserBean;
 import com.kcr.common.util.RxObservable;
 import com.kcr.login.contract.CLogin;
 import com.kcr.login.model.MLoginImpl;
@@ -23,12 +23,12 @@ public class PLoginImpl extends BasePresenter<CLogin.IVLogin, MLoginImpl> implem
 
 
     @Override
-    public void pLogin() {
+    public void pLogin(String userNameStr, String passwordStr) {
         mView.showLoading();
-        mModel.mLogin(new RxObservable<LoginBean>() {
+        mModel.mLogin(userNameStr,passwordStr,new RxObservable<LoginUserBean>() {
 
             @Override
-            public void onSuccess(LoginBean bean) {
+            public void onSuccess(LoginUserBean bean) {
                 mView.hideLoading();
                 mView.vLoginSuccess(bean);
             }

@@ -2,7 +2,7 @@ package com.kcr.main.presenter;
 
 import android.content.Context;
 
-import com.kcr.common.bean.BannerBean;
+import com.dtr.network.bean.BannerBean;
 import com.kcr.common.base.BasePresenter;
 import com.kcr.common.util.RxObservable;
 import com.kcr.main.bean.HomeWelfareBean;

@@ -5,7 +5,7 @@
     <color name="colorPrimaryDark">#025BC0</color>
     <color name="colorPrimaryLight">#167DE1</color>
 
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#5A8DDF</color>
 
     <color name="red_ec">#ec3046</color>
     <color name="black">#000000</color>
@@ -23,4 +23,74 @@
 
     <color name="transparent">#00000000</color>
     <color name="md_divider_black">#10000000</color>
+
+
+    <color name="white5">#0cFFFFFF</color>
+    <color name="white10">#22FFFFFF</color>
+    <color name="white20">#33FFFFFF</color>
+    <color name="white30">#44FFFFFF</color>
+    <color name="white40">#66FFFFFF</color>
+    <color name="white50">#88FFFFFF</color>
+    <color name="white60">#99FFFFFF</color>
+    <color name="white70">#BBFFFFFF</color>
+    <color name="white80">#CCFFFFFF</color>
+    <color name="white90">#EEFFFFFF</color>
+    <color name="white08">#14FFFFFF</color>
+    <color name="white85">#D9FFFFFF</color>
+    <color name="black90">#EE000000</color>
+    <color name="black80">#CC000000</color>
+    <color name="black70">#BB000000</color>
+    <color name="black60">#99000000</color>
+    <color name="black50">#88000000</color>
+    <color name="black40">#66000000</color>
+    <color name="black30">#44000000</color>
+    <color name="black20">#33000000</color>
+    <color name="black10">#22000000</color>
+    <color name="black5">#0c000000</color>
+    <color name="color_ff1bc38e">#ff1bc38e</color>
+    <!-- 灰色 -->
+    <color name="gray">#808080</color>
+    <!-- 红色 -->
+    <color name="red">#FF0000</color>
+    <!-- 金色 -->
+    <color name="gold">#FFD700</color>
+    <!-- 黄色 -->
+    <color name="yellow">#FFFF00</color>
+    <!-- 绿色 -->
+    <color name="green">#008000</color>
+    <!-- 蓝色 -->
+    <color name="blue">#0000FF</color>
+    <!-- 紫色 -->
+    <color name="purple">#800080</color>
+    <!-- 粉色 -->
+    <color name="pink">#FFC0CB</color>
+    <!-- 橙色 -->
+    <color name="orange">#FFA500</color>
+
+    <!-- 带透明度的黑白色 -->
+    <color name="transparent_black_80">#CB000000</color>
+    <color name="transparent_black_70">#B2000000</color>
+    <color name="transparent_black_60">#99000000</color>
+    <color name="transparent_black_50">#80000000</color>
+    <color name="transparent_black_40">#4f000000</color>
+    <color name="transparent_black_30">#4d000000</color>
+    <color name="transparent_black_20">#32000000</color>
+    <color name="transparent_black_10">#1a000000</color>
+    <color name="transparent_white_80">#CBffffff</color>
+    <color name="transparent_white_70">#B4FFFFFF</color>
+    <color name="transparent_white_60">#96ffffff</color>
+    <color name="transparent_white_50">#80ffffff</color>
+    <color name="transparent_white_40">#64ffffff</color>
+    <color name="transparent_white_30">#4dffffff</color>
+    <color name="transparent_white_20">#32ffffff</color>
+    <color name="transparent_white_15">#18ffffff</color>
+    <color name="transparent_white_10">#1dffffff</color>
+    <color name="transparent_white_61">#66FFFFFF</color>
+    <color name="color_2A2A2A">#2A2A2A</color>
+    <color name="color_0C0542_20">#330C0542</color>
+    <color name="colorLine">#ECECEC</color>
+    <!-- 按钮禁用时的颜色 -->
+    <color name="colorButtonDisable">#DDDDDD</color>
+    <!-- 按钮按压时的颜色 -->
+    <color name="colorButtonPressed">#1976d2</color>
 </resources>

@@ -9,10 +9,6 @@ import android.text.TextUtils;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.kcr.common.util.ToastUtils;
 
-import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
-
-import okhttp3.OkHttpClient;
 
 
 public class MyApplication extends Application {

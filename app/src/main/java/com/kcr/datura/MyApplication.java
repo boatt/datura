@@ -8,8 +8,11 @@ import android.support.multidex.MultiDex;
 import android.text.TextUtils;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.dtr.network.EasyHttpInitUtils;
 import com.kcr.common.util.SpUtils;
 import com.kcr.common.util.ToastUtils;
+import com.kcr.common.util.image.ImageLoader;
+import com.orhanobut.hawk.Hawk;
 
 
 public class MyApplication extends Application {
@@ -23,9 +26,14 @@ public class MyApplication extends Application {
             ARouter.openDebug();
             ARouter.openLog();
         }
+
         ARouter.init(this);
         SpUtils.init(this);
         ToastUtils.init(this);
+        EasyHttpInitUtils.init(this);
+        Hawk.init(this).build();
+        // 初始化图片加载器
+        ImageLoader.init(this);
     }
     @Override
     protected void attachBaseContext(Context base) {

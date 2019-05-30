@@ -1,11 +1,36 @@
 <resources>
     <string name="app_name">login</string>
-    <string name="login_forget">忘记密码？</string>
     <string name="login_login">登 录</string>
     <string name="login_tourist_mode">游客模式</string>
     <string name="login_verify_mode">验证码模式</string>
     <string name="login_password">请输入密码</string>
+    <string name="login_v_hint">请输入验证码</string>
     <string name="login_password_mode">密码模式</string>
     <string name="login_sms">获取验证码</string>
     <string name="login_username">输入手机号码</string>
+
+
+    <!-- 登录 -->
+    <string name="login_register">注册</string>
+    <string name="login_phone_hint">请输入手机号</string>
+    <string name="login_password_hint">请输入密码</string>
+    <string name="login_forget">忘记密码？</string>
+    <string name="login_text">登录</string>
+
+    <!-- 注册 -->
+    <string name="register_title">注册</string>
+    <string name="register_hint">手机号仅用于登录和保护账号安全</string>
+    <string name="register_login">登录</string>
+    <string name="register_phone_hint">输入手机号码</string>
+    <string name="register_code_hint">输入验证码</string>
+    <string name="register_send_code">发送验证码</string>
+    <string name="register_password_hint1">设置密码</string>
+    <string name="register_password_hint2">再次输入密码</string>
+
+    <!-- 忘记密码 -->
+    <string name="password_forget_title">忘记密码</string>
+    <string name="password_forget_phone_hint">输入手机号码</string>
+    <string name="password_forget_code_hint">输入验证码</string>
+    <string name="password_forget_send_code">发送验证码</string>
+    <string name="password_forget_commit">下一步</string>
 </resources>

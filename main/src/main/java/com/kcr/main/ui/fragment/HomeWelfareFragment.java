@@ -13,7 +13,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.kcr.common.bean.BannerBean;
+import com.dtr.network.bean.BannerBean;
 import com.kcr.common.base.BasicFragment;
 import com.kcr.common.util.layoutmanager.layoutmanagergroup.skidright.SkidRightLayoutManager;
 import com.kcr.common.widget.NoticeView;

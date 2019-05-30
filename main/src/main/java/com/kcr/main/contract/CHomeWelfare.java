@@ -1,6 +1,6 @@
 package com.kcr.main.contract;
 
-import com.kcr.common.bean.BannerBean;
+import com.dtr.network.bean.BannerBean;
 import com.kcr.common.base.IBasePresenter;
 import com.kcr.common.base.IBaseView;
 import com.kcr.main.bean.HomeWelfareBean;
