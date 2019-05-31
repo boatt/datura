@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.kcr.common.R;
 import com.kcr.common.util.UIUtils;
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 import com.qmuiteam.qmui.widget.dialog.QMUITipDialog;
@@ -32,10 +33,17 @@ public class BasicActivity<T extends BasePresenter> extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext = this;
+        overridePendingTransition(R.anim.a_to_b_of_in, R.anim.a_to_b_of_out);
         createPresenter();
     }
 
     public void createPresenter() {
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.a_back_b_of_in, R.anim.a_back_b_of_out);
     }
 
     @Override

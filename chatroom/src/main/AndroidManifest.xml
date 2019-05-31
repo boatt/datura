@@ -10,6 +10,6 @@
 
         <activity
             android:name=".view.ChatRoomActivity"
-            android:windowSoftInputMode="adjustPan"></activity>
+            android:windowSoftInputMode="stateHidden|stateUnspecified"></activity>
     </application>
 </manifest>

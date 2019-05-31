@@ -8,6 +8,7 @@ import com.dtr.network.bean.LoginUserBean;
 import com.orhanobut.hawk.Hawk;
 
 public class AppCache {
+    private static LoginUserBean user;
 
     /**
      * Desc: 获得本地登录用户ID
@@ -28,10 +29,11 @@ public class AppCache {
      * @return user
      */
     public static LoginUserBean getUser() {
-        LoginUserBean user = null;
-        try {
-            user = Hawk.get(UserConstants.AUTH_USERBEAN_CACHE, null);
-        } catch (Exception e) {
+        if (user == null) {
+            try {
+                user = Hawk.get(UserConstants.AUTH_USERBEAN_CACHE, null);
+            } catch (Exception e) {
+            }
         }
         return user;
     }
@@ -62,6 +64,7 @@ public class AppCache {
      * @return boolean
      */
     public static void loginOut() {
+        user = null;
         Hawk.deleteAll();
     }
 

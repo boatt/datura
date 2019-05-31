@@ -2,6 +2,7 @@ package com.damai.chatroom;
 
 import org.java_websocket.WebSocket;
 import org.java_websocket.client.WebSocketClient;
+import org.java_websocket.enums.ReadyState;
 import org.java_websocket.handshake.ServerHandshake;
 
 import java.io.UnsupportedEncodingException;
@@ -52,7 +53,7 @@ public class ChatTest {
 
         client.connect();
 
-        while (!client.getReadyState().equals(WebSocket.READYSTATE.OPEN)) {
+        while (!client.getReadyState().equals(ReadyState.OPEN)) {
             System.out.println("还没有打开");
         }
         System.out.println("打开了");

@@ -1,9 +1,13 @@
 package com.damai.chatroom;
 
-import android.util.Log;
 
+import android.text.TextUtils;
 
-import com.damai.chatroom.bean.MessageDtrBean;
+import com.damai.chatroom.bean.ChatRoomMessageBean;
+import com.kcr.common.constant.Constants;
+import com.kcr.common.util.AppCache;
+import com.kcr.common.util.GsonUtils;
+import com.kcr.common.util.LogUtils;
 
 import org.greenrobot.eventbus.EventBus;
 import org.java_websocket.exceptions.WebsocketNotConnectedException;
@@ -16,10 +20,10 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class WebSocketClient extends org.java_websocket.client.WebSocketClient {
-    private static final String TAG = "WebSocketClient";
     private static WebSocketClient mWebSocketClient;
     private static Queue<String> mMessagePool = new LinkedList<String>();
-    public static final String ADDRESS = "ws://47.92.69.201:8033/chat";
+    //    public static final String ADDRESS = "ws://47.92.69.201:8033/chat";
+    public static final String ADDRESS = "ws://172.16.90.87:80";
 
     public WebSocketClient(URI serverUri) {
         super(serverUri);
@@ -30,7 +34,7 @@ public class WebSocketClient extends org.java_websocket.client.WebSocketClient {
         if (mWebSocketClient.isOpen()) {
             try {
                 String poll = mMessagePool.poll();
-                Log.d(TAG, "sendNewMessage: " + poll);
+                LogUtils.d("发送消息: " + poll);
                 send(poll);
             } catch (WebsocketNotConnectedException e) {
                 e.printStackTrace();
@@ -59,6 +63,7 @@ public class WebSocketClient extends org.java_websocket.client.WebSocketClient {
 
     @Override
     public void onOpen(ServerHandshake handshakedata) {
+        LogUtils.d("连接聊天服务: ");
 //        String data = SocketDataGenerateUtil.generateLoginData();
 //        send(data);
 //        Log.i(TAG, "onOpen: "+data);
@@ -67,28 +72,32 @@ public class WebSocketClient extends org.java_websocket.client.WebSocketClient {
     @Override
     public void onMessage(ByteBuffer bytes) {
         super.onMessage(bytes);
-        Log.i(TAG, "onMessageByteBuffer: " + bytes);
+        LogUtils.d("收到消息ByteBuffer: " + bytes);
     }
 
     @Override
     public void onMessage(String data) {
-        Log.i(TAG, "onMessageString: " + data);
+        LogUtils.d("收到消息String: " + data);
         if (!mMessagePool.isEmpty()) {
             send(mMessagePool.poll());
         }
-        MessageDtrBean event = new MessageDtrBean();
-        event.setContent(data);
-        EventBus.getDefault().post(event);
+        ChatRoomMessageBean message = GsonUtils.parseJsonToBean(data, ChatRoomMessageBean.class);
+
+        if (message != null && !TextUtils.equals(message.getSendUserId(), AppCache.getUserId())) {
+            message.setOrientation(Constants.GRAVITY_LEFT);
+            EventBus.getDefault().post(message);
+        }
+
     }
 
     @Override
     public void onClose(int i, String s, boolean b) {
-        Log.i(TAG, "onClose: ");
+        LogUtils.i("连接关闭: ");
 
     }
 
     @Override
     public void onError(Exception e) {
-        Log.i(TAG, "onError: ");
+        LogUtils.i("连接错误: ");
     }
 }

@@ -27,12 +27,18 @@
             android:layout_gravity="center_vertical" />
     </LinearLayout>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_list"
+    <FrameLayout
         android:layout_width="match_parent"
+
         android:layout_height="match_parent"
-        android:layout_below="@+id/linear_title"
-        android:layout_centerVertical="true"
-        android:layout_marginBottom="10dp" />
+        android:layout_below="@+id/linear_title">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp" />
+    </FrameLayout>
 
 </RelativeLayout>

@@ -5,7 +5,10 @@
     android:layout_height="wrap_content"
     android:gravity="center"
     android:orientation="vertical"
-    android:padding="18dp">
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp"
+    android:paddingBottom="18dp"
+    android:paddingTop="18dp">
 
     <ImageView
         android:id="@+id/iv_icon"
@@ -20,5 +23,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:text="skid"
+        android:textSize="14sp"
         android:textColor="@color/black" />
 </LinearLayout>

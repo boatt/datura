@@ -5,7 +5,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -13,7 +12,8 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.damai.chatroom.R;
 import com.damai.chatroom.WebSocketClient;
 import com.damai.chatroom.adapter.MultipleItemQuickAdapter;
-import com.damai.chatroom.bean.MessageDtrBean;
+import com.damai.chatroom.bean.ChatRoomMessageBean;
+import com.damai.chatroom.utils.MessageUtils;
 import com.kcr.common.base.BasicActivity;
 
 import org.greenrobot.eventbus.EventBus;
@@ -30,27 +30,37 @@ public class ChatRoomActivity extends BasicActivity implements View.OnClickListe
     private LinearLayoutManager mLinearLayoutManager;
     private EditText mEtContent;
     private Button mBtSend;
-    private List<MessageDtrBean> mMessageDatas;
+    private List<ChatRoomMessageBean> mMessageDatas;
     private MultipleItemQuickAdapter mMessageAdapter;
+    private String roomId = "10000";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
-        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
         initView();
         EventBus.getDefault().register(this);
         WebSocketClient.init();
+        findViewById(R.id.iv_back).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         mRecyclerView = findViewById(R.id.id_recyclerview);
         mMessageDatas = new ArrayList<>();
         mRecyclerView.setLayoutManager(mLinearLayoutManager = new LinearLayoutManager(this));
-        //                int position = mMessageDatas.indexOf(item);
+
         mMessageAdapter = new MultipleItemQuickAdapter(mContext, mMessageDatas);
         mRecyclerView.setAdapter(mMessageAdapter);
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
-    public void onJump(MessageDtrBean messageEvent) {
+    public void onJump(ChatRoomMessageBean messageEvent) {
+        addMessage(messageEvent);
+    }
+
+    private void addMessage(ChatRoomMessageBean messageEvent) {
         mMessageDatas.add(messageEvent);
         mMessageAdapter.notifyDataSetChanged();
         mRecyclerView.scrollToPosition(mMessageDatas.size() - 1);
@@ -69,7 +79,8 @@ public class ChatRoomActivity extends BasicActivity implements View.OnClickListe
             String content = mEtContent.getText().toString().trim();
             if (!TextUtils.isEmpty(content)) {
                 mEtContent.setText("");
-                WebSocketClient.getmWebSocketClient().sendNewMessage(content);
+                ChatRoomMessageBean message = MessageUtils.sendTextMessage(content,roomId);
+                addMessage(message);
             }
         } else {
         }

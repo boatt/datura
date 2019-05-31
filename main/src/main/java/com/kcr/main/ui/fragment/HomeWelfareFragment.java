@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.util.Pair;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -15,6 +16,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.dtr.network.bean.BannerBean;
 import com.kcr.common.base.BasicFragment;
+import com.kcr.common.util.UIUtils;
 import com.kcr.common.util.layoutmanager.layoutmanagergroup.skidright.SkidRightLayoutManager;
 import com.kcr.common.widget.NoticeView;
 import com.kcr.main.R;
@@ -70,15 +72,18 @@ public class HomeWelfareFragment extends BasicFragment<PHomeWelfareImpl> impleme
         mPresenter.pHomeBanner();
     }
 
-    private void initAdapter() {//BaseQuickAdapter
-        rvList.setLayoutManager(new SkidRightLayoutManager(1.5f, 0.85f));
+    private static final String TAG = "HomeWelfareFragment";
+    private void initAdapter() {
+        float itemHeightWidthRatio = (float)UIUtils.getScreenHeight(mContext) / UIUtils.getScreenWidth(mContext);
+        Log.d(TAG, "initAdapter: "+itemHeightWidthRatio);
+        rvList.setLayoutManager(new SkidRightLayoutManager(itemHeightWidthRatio, 0.85f));
 
         mAdapter = new BaseQuickAdapter<HomeWelfareBean, BaseViewHolder>(R.layout.item_welfare) {
 
             @Override
             protected void convert(final BaseViewHolder helper, final HomeWelfareBean item) {
                 ImageView imgBg = helper.getView(R.id.img_bg);
-                Glide.with(imgBg.getContext()).load(item.getImage()) .animate( android.R.anim.slide_in_left ) .diskCacheStrategy(DiskCacheStrategy.SOURCE).into(imgBg);
+                Glide.with(imgBg.getContext()).load(item.getImage()).animate(android.R.anim.slide_in_left).diskCacheStrategy(DiskCacheStrategy.SOURCE).into(imgBg);
                 helper.setText(R.id.tv_title, item.getTitle());
                 helper.setText(R.id.tv_bottom, item.getDesc());
                 imgBg.setOnClickListener(new View.OnClickListener() {

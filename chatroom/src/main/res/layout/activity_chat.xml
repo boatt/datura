@@ -2,18 +2,20 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:orientation="vertical">
 
     <LinearLayout
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="14dp"
-            android:layout_height="20dp"
+            android:id="@+id/iv_back"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="30dp"
             android:src="@mipmap/icon_back" />
 
         <TextView
@@ -29,46 +31,48 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_weight="1">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/id_recyclerview"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_above="@+id/ll_content" />
-
-        <LinearLayout
-            android:id="@+id/ll_content"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="6dp"
-            android:background="@color/white"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/et_content"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="4dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/shape_edittext_gray_hollow"
-                android:padding="6dp"
-                android:textSize="12sp" />
+            android:layout_height="match_parent" />
 
 
-            <Button
-                android:id="@+id/bt_send"
-                android:layout_width="60dp"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="4dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="4dp"
-                android:background="@drawable/shape_edittext_gran"
-                android:text="发送" />
-        </LinearLayout>
     </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="6dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_edittext_gray_hollow"
+            android:padding="6dp"
+            android:textSize="12sp" />
+
+
+        <Button
+            android:id="@+id/bt_send"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/shape_edittext_gran"
+            android:text="发送" />
+    </LinearLayout>
 </LinearLayout>

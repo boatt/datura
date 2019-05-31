@@ -75,4 +75,16 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:background">@color/colorLine</item>
     </style>
+
+    <style name="BaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorPrimaryDark</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:screenOrientation">portrait</item>
+        <item name="android:windowSoftInputMode">adjustResize|stateHidden</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:statusBarColor" tools:targetApi="lollipop"></item>
+    </style>
 </resources>

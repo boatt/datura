@@ -10,9 +10,11 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import static android.content.Context.WINDOW_SERVICE;
 
 
 public class UIUtils {
@@ -149,6 +151,18 @@ public class UIUtils {
 		float scaledDensity = context.getResources().getDisplayMetrics().scaledDensity;
 		return sp * scaledDensity;
 	}
+	public static int getScreenWidth(Context context) {
+		DisplayMetrics metric = new DisplayMetrics();
+		WindowManager wm = (WindowManager) context.getSystemService(WINDOW_SERVICE);
+		wm.getDefaultDisplay().getMetrics(metric);
+		return metric.widthPixels;
+	}
 
+	public static int getScreenHeight(Context context) {
+		DisplayMetrics metric = new DisplayMetrics();
+		WindowManager wm = (WindowManager) context.getSystemService(WINDOW_SERVICE);
+		wm.getDefaultDisplay().getMetrics(metric);
+		return metric.heightPixels;
+	}
 
 }

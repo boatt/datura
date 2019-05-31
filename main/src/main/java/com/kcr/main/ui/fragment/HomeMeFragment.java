@@ -81,7 +81,7 @@ public class HomeMeFragment extends BasicFragment {
 
 
     private void initAdapter() {//BaseQuickAdapter
-        rvList.setLayoutManager(new GridLayoutManager(mContext, 3));
+        rvList.setLayoutManager(new GridLayoutManager(mContext, 4));
 
         mAdapter = new BaseQuickAdapter<HomeMeBean, BaseViewHolder>(R.layout.item_home_me) {
             @Override
