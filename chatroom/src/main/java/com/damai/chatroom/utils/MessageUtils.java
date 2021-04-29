@@ -6,16 +6,7 @@ import com.kcr.common.constant.Constants;
 import com.kcr.common.util.AppCache;
 import com.kcr.common.util.GsonUtils;
 
-/**
- * Desc:
- * <p>
- *
- * @author: ZhouTao
- * Date: 2019/5/31
- * Copyright: Copyright (c) 2016-2020
- * Company: @小牛科技
- * Update
- */
+
 public class MessageUtils {
     public static ChatRoomMessageBean sendTextMessage(String content, String roomId) {
 
