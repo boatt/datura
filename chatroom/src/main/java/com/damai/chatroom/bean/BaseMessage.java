@@ -4,16 +4,6 @@ import com.dtr.network.bean.LoginUserBean;
 
 import java.io.Serializable;
 
-/**
- * Desc:
- * <p>
- *
- * @author: ZhouTao
- * Date: 2019/5/31
- * Copyright: Copyright (c) 2016-2020
- * Company: @小牛科技
- * Update
- */
 public class BaseMessage implements Serializable {
     /**
      * 会话类型
