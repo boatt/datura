@@ -2,11 +2,7 @@ package com.damai.chatroom.bean;
 
 import java.io.Serializable;
 
-/**
- * 作者: rongfeng
- * 功能描述: 用户信息
- * 备注:
- */
+
 
 public class MessageUserBean implements Serializable {
 
